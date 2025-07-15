@@ -1,0 +1,10 @@
+<div style="display: flex; align-items: flex-start; gap: 32px;">
+  <div style="flex: 1 1 0;">
+    <nav style="margin-bottom: 20px;">
+      <a routerLink="/products" routerLinkActive="active" style="margin-right: 10px; text-decoration: none; padding: 6px 16px; border: 1px solid #ccc; border-radius: 4px;">Товары</a>
+      <a routerLink="/categories" routerLinkActive="active" style="text-decoration: none; padding: 6px 16px; border: 1px solid #ccc; border-radius: 4px;">Категории</a>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+  <app-selected-item style="min-width: 250px; max-width: 350px;"></app-selected-item>
+</div>
