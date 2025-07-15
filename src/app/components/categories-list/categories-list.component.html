@@ -1,0 +1,15 @@
+<section class="categories-list">
+  <h2>Категории</h2>
+  <div class="hint">Кликните по категории, чтобы выбрать или снять выбор</div>
+  @if (categories.length > 0) {
+    <ul class="categories">
+      @for (category of categories; track category) {
+        <li class="category-item" [class.selected]="selectedCategories().includes(category)" (click)="toggleCategory(category)">
+          {{ category }}
+        </li>
+      }
+    </ul>
+  } @else {
+    <div class="loading">Загрузка...</div>
+  }
+</section>

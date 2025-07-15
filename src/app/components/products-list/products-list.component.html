@@ -1,0 +1,19 @@
+<section class="products-list">
+  <h2>Список товаров</h2>
+  <div class="hint">Кликните по товару, чтобы выбрать или снять выбор</div>
+  @if (products.length > 0) {
+    <ul class="products">
+      @for (product of products; track product.id) {
+        <li class="product-item" [class.selected]="isSelected(product)" (click)="toggleProduct(product)">
+          <img [src]="product.image" [alt]="product.title" class="product-image" />
+          <div class="product-info">
+            <strong>{{ product.title }}</strong>
+            <span class="product-price">{{ product.price }} $</span>
+          </div>
+        </li>
+      }
+    </ul>
+  } @else {
+    <div class="loading">Загрузка...</div>
+  }
+</section>

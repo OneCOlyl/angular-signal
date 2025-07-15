@@ -1,8 +1,0 @@
-<h2>Список товаров</h2>
-<ul *ngIf="products.length; else loading">
-  <li *ngFor="let product of products">
-    <img [src]="product.image" alt="{{product.title}}" width="50" style="vertical-align:middle; margin-right:8px;">
-    <strong>{{ product.title }}</strong> — {{ product.price }}$
-  </li>
-</ul>
-<ng-template #loading>Загрузка...</ng-template>

@@ -1,0 +1,26 @@
+<aside class="selected-item">
+  <h3>Выбранные продукты</h3>
+  @if (selectedProducts().length > 0) {
+    <ul>
+      @for (product of selectedProducts(); track product.id) {
+        <li style="display: flex; align-items: center; gap: 8px;">
+          <img [src]="product.image" [alt]="product.title" width="32" height="32" style="object-fit: contain; border-radius: 4px;">
+          <span><strong>{{ product.title }}</strong> — {{ product.price }} $</span>
+        </li>
+      }
+    </ul>
+  } @else {
+    <div class="empty">Нет выбранных продуктов</div>
+  }
+
+  <h3>Выбранные категории</h3>
+  @if (selectedCategories().length > 0) {
+    <ul>
+      @for (category of selectedCategories(); track category) {
+        <li>{{ category }}</li>
+      }
+    </ul>
+  } @else {
+    <div class="empty">Нет выбранных категорий</div>
+  }
+</aside>
