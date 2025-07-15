@@ -1,5 +1,0 @@
-<h2>Категории</h2>
-<ul *ngIf="categories.length; else loading">
-  <li *ngFor="let category of categories">{{ category }}</li>
-</ul>
-<ng-template #loading>Загрузка...</ng-template>
